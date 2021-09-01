@@ -3,50 +3,50 @@
 // Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
 // Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
 
-const bici = [
-        {
-            nome : 'Bianchi',
-            peso : 3
-        },
-        {
-            nome : 'Trek',
-            peso : 2
-        },
-        {
-            nome : 'Scott',
-            peso : 1
-        }
-    ];
-    console.log(bici);
+// const bici = [
+//         {
+//             nome : 'Bianchi',
+//             peso : 3
+//         },
+//         {
+//             nome : 'Trek',
+//             peso : 2
+//         },
+//         {
+//             nome : 'Scott',
+//             peso : 1
+//         }
+//     ];
+//     console.log(bici);
 
 
-let biciLeggera = bici[0];
+// let biciLeggera = bici[0];
 
-    for (let i = 0; i < bici.length; i++) {
-            const {peso} = bici[i];
-            if (peso < biciLeggera.peso) {
-                biciLeggera = bici[i];
-            }
-        }
+//     for (let i = 0; i < bici.length; i++) {
+//             const {peso} = bici[i];
+//             if (peso < biciLeggera.peso) {
+//                 biciLeggera = bici[i];
+//             }
+//         }
         
-console.log(biciLeggera);
+// console.log(biciLeggera);
 
 
 // BONUS: inserire una arrow function che preso in input l'array di bici ritorni l'oggetto con bici più leggera
 
-biciLight = (array) => {
-    let biciLeggera = array[0];
-    for (let i = 0; i < array.length; i++) {
-        const {peso} = array[i];
-        if (peso < biciLeggera.peso) {
-            biciLeggera = array[i];
-        }
-    }
-    return biciLeggera;
-}
-console.log(biciLight(bici));
+// biciLight = (array) => {
+//     let biciLeggera = array[0];
+//     for (let i = 0; i < array.length; i++) {
+//         const {peso} = array[i];
+//         if (peso < biciLeggera.peso) {
+//             biciLeggera = array[i];
+//         }
+//     }
+//     return biciLeggera;
+// }
+// console.log(biciLight(bici));
 
-
+// --------------------------------------------------------------------------------------------------------------------------
 // Snack2
 // Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
 // Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
@@ -96,6 +96,7 @@ console.log(biciLight(bici));
 // console.log(squadre);
 
 // // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+
 // let newArraySquadre =[];
 // for (let i = 0; i < squadre.length; i++) {
 //     const {nome, falli} = squadre[i];
@@ -103,3 +104,37 @@ console.log(biciLight(bici));
 //     newArraySquadre.push(`${nome} falli subiti: ${falli}`);
 // }
 // console.log(newArraySquadre);
+
+// ----------------------------------------------------------------------------------
+// Snack 3
+// Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+// La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+// Usiamo i nuovi metodi degli array foreach o filter.
+const array = [1,2,3,4,5,6,7,8,9,10];
+let a = rdnNumber(1, 10);
+let b = rdnNumber(1, 10);
+
+console.log(`${a}  ${b}`);
+
+
+
+// const myFunction = (array, a, b) => {
+   
+// }
+
+
+const newArray = array.filter((element) => {
+    if ((element > a) && (element < b)) {
+        return true;
+    }
+    return false;
+})
+console.log(newArray);
+
+
+
+// funzione numeri random 
+function rdnNumber (min, max) {
+    let rnd = Math.floor(Math.random() * (max - min)) + min;
+    return rnd;
+}
