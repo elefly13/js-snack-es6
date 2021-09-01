@@ -115,21 +115,24 @@ let a = rdnNumber(1, 10);
 let b = rdnNumber(1, 10);
 
 console.log(`${a}  ${b}`);
+while (a >= b) {
+    a = rdnNumber(1, 10);
+    b = rdnNumber(1, 10);
+}
+console.log(`${a}  ${b}`);
 
+const myFunction = (array, a, b) => {
+    const newArray = array.filter((element) => {
+        if ((element > a) && (element < b)) {
+            return true;
+        }
+        return false;
+    })
+    return (newArray);
+}
 
+console.log(myFunction(array, a, b));
 
-// const myFunction = (array, a, b) => {
-   
-// }
-
-
-const newArray = array.filter((element) => {
-    if ((element > a) && (element < b)) {
-        return true;
-    }
-    return false;
-})
-console.log(newArray);
 
 
 
